@@ -1,0 +1,10 @@
+__pycache__/
+*.pyc
+.venv/
+venv/
+.env
+.DS_Store
+*.log
+Thumbs.db
+LeMans24h.db
+LeMans24h.sql

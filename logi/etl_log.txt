@@ -1,0 +1,7 @@
+21:10:20 [WARNING] Tryb --clean-start aktywny: usuwanie i odtwarzanie schematu bazy...
+21:10:20 [INFO] Schemat bazy danych zweryfikowany i gotowy do zasilenia.
+21:10:20 [INFO] Zaktualizowano konfiguracje toru Circuits z circuits.csv
+21:10:20 [INFO] Races: zaimportowano 101 edycji wyścigu.
+21:12:05 [INFO] Zapisano 1078 nierozpoznanych rekordów do: logi\unmatched_makes.csv
+21:12:05 [INFO] Zaimportowano zgłoszeń: 5275 (odrzuconych: 53)
+21:12:05 [INFO] Proces ETL zakończony pomyślnie.
