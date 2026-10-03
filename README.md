@@ -71,6 +71,11 @@ Projekt nie wymaga instalowania zewnętrznych serwerów baz danych — wszystko 
 * **Geoinformatyka (GIS):** `geopandas`, `shapely`, QGIS (układy EPSG:4326 oraz metryczny EPSG:2154)
 * **Wizualizacja:** `matplotlib`
 
+## Źródła
+
+* **Kaggle**: Le Mans 24 Hours autora Joakim Arvidsson
+* **plotaroute**: Le Mans 24h Circuit
+
 ## Autor
 
 Jakub Jankowski
