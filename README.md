@@ -4,6 +4,10 @@ Projekt łączący pasję do motorsportu z inżynierią danych i geoinformatyką
 
 Zamiast ręcznego wklepywania tabel, cały proces — od pobrania surowych plików, przez czyszczenie danych, aż po wygenerowanie warstw mapowych — dzieje się automatycznie w Pythonie.
 
+<p align="center">
+  <img src="wyniki/qgis_visualization.png" alt="Wizualizacja toru" width="300">
+</p>
+
 ## Co robi ten projekt?
 
 ### 1. Automatycznie porządkuje ponad 5000 wpisów (potok ETL w Pythonie)
@@ -25,12 +29,22 @@ Zamiast ręcznego wklepywania tabel, cały proces — od pobrania surowych plik�
 
 ## Wizualizacja i profil wysokościowy toru
 
+<p align="center">
+  <img src="wyniki/lemans_track_profile.png" alt="Profil wysokościowy" width="400">
+</p>
+
+
 Skrypt analityczny automatycznie przelicza dystans oraz wysokości terenu, generując gotowy wykres telemetryczny:
 
 * **Różnica wysokości:** na jednym okrążeniu kierowcy pokonują dokładnie 42 metry przewyższenia.
 * **Integracja z QGIS:** dzięki podzieleniu toru na mikro-odcinki z przypisaną wysokością początkową i końcową, w QGIS można użyć stylu *Linii interpolowanej*. Daje to efekt gładkiej wstęgi zmieniającej kolor wraz ze wznoszeniem się terenu na tle satelity lub mapy drogowej OpenStreetMap.
 
 ## Jak zorganizowana jest baza danych?
+
+<p align="center">
+  <img src="wyniki/sql_schemat.png" alt="schemat bazy" width="300">
+</p>
+
 
 Baza SQLite (`LeMans24h.db`) została zaprojektowana tak, aby uniknąć powtarzania tych samych informacji i pilnować porządku relacyjnego:
 
@@ -47,8 +61,22 @@ Baza SQLite (`LeMans24h.db`) została zaprojektowana tak, aby uniknąć powtarza
 W pliku `sql/analytics_queries.sql` znajdują się gotowe zapytania wykorzystujące zaawansowane techniki analityczne (Window Functions, CTE):
 
 * **Bieżący ranking wszech czasów (`SUM() OVER`):** dynamicznie przelicza sumę zwycięstw czołowych producentów (Ferrari, Porsche, Audi, Bentley) rok po roku, pokazując, jak zmieniał się lider historycznej klasyfikacji.
+
+<p align="center">
+  <img src="wyniki/winners.png" alt="SCT Guardian – ekran główny" width="600">
+</p>
+
 * **Wykrywanie passy zwycięstw (`LAG()` — problem Gaps & Islands):** samodzielnie grupuje lata, w których dana marka wygrywała bez przerwy rok po roku, wyliczając najdłuższe serie w historii.
+
+<p align="center">
+  <img src="wyniki/running_total.png" alt="SCT Guardian – ekran główny" width="500">
+</p>
+
 * **Wskaźnik bezawaryjności:** zestawia liczbę aut, które dojechały do mety, z tymi, które uległy awarii, wyliczając procentową niezawodność konstrukcji z podziałem na dekady.
+
+<p align="center">
+  <img src="wyniki/reliability.png" alt="SCT Guardian – ekran główny" width="800">
+</p>
 
 ## Jak uruchomić projekt na swoim własnym komputerze?
 
